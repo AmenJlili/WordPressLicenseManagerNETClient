@@ -1,0 +1,8 @@
+C:\Users\Amen\source\repos\WPLMNETClient\bin\Debug\netstandard2.0\WPLMNETClient.deps.json
+C:\Users\Amen\source\repos\WPLMNETClient\bin\Debug\netstandard2.0\WPLMNETClient.dll
+C:\Users\Amen\source\repos\WPLMNETClient\bin\Debug\netstandard2.0\WPLMNETClient.pdb
+C:\Users\Amen\source\repos\WPLMNETClient\obj\Debug\netstandard2.0\WPLMNETClient.AssemblyInfoInputs.cache
+C:\Users\Amen\source\repos\WPLMNETClient\obj\Debug\netstandard2.0\WPLMNETClient.AssemblyInfo.cs
+C:\Users\Amen\source\repos\WPLMNETClient\obj\Debug\netstandard2.0\WPLMNETClient.dll
+C:\Users\Amen\source\repos\WPLMNETClient\obj\Debug\netstandard2.0\WPLMNETClient.pdb
+C:\Users\Amen\source\repos\WPLMNETClient\obj\Debug\netstandard2.0\WPLMNETClient.csprojAssemblyReference.cache
