@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/packages
+/Tests/WPLMNETClient.NetFramework.Tests/obj/Debug
+/Tests/WPLMNETClient.NetFramework.Tests/bin/Debug

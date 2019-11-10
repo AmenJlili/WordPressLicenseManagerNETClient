@@ -50,9 +50,12 @@ namespace WordPressLicenseManagerNETClient
             if (Configuration == null)
                 throw new NullReferenceException("Configuration property is null");
 
+            if (action == Consts.Action.Create)
+               if ( string.IsNullOrWhiteSpace(Configuration.SecretKey))
+                       throw new NullReferenceException("Configuration's Secret key is an empty string or null.");
+
             if (string.IsNullOrWhiteSpace(Configuration.PostURL) ||
-                string.IsNullOrWhiteSpace(Configuration.ActivationKey) ||
-                string.IsNullOrWhiteSpace(Configuration.SecretKey))
+                string.IsNullOrWhiteSpace(Configuration.ActivationKey))
                 throw new NullReferenceException("One of the properties of the Configuration property is null or white space.");
 
 

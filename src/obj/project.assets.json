@@ -321,11 +321,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amen\\source\\repos\\WPLMNETClient\\WPLMNETClient.csproj",
+      "projectUniqueName": "P:\\Blue Byte LLC\\src\\WPLicenseManagerClient\\src\\WPLMNETClient.csproj",
       "projectName": "WPLMNETClient",
-      "projectPath": "C:\\Users\\Amen\\source\\repos\\WPLMNETClient\\WPLMNETClient.csproj",
+      "projectPath": "P:\\Blue Byte LLC\\src\\WPLicenseManagerClient\\src\\WPLMNETClient.csproj",
       "packagesPath": "C:\\Users\\Amen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amen\\source\\repos\\WPLMNETClient\\obj\\",
+      "outputPath": "P:\\Blue Byte LLC\\src\\WPLicenseManagerClient\\src\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

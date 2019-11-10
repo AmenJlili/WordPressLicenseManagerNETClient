@@ -53,8 +53,11 @@ namespace WordPressLicenseManagerNETClient.Models
 
 
         /// <summary>
-        /// Registers the current domain.
+        /// Registers the current domain. Default implementation returns a string in the following format: "MachineNode: MACHINENAME - [{CPU_BIOS_SERIAL_NUMBER}]"
         /// </summary>
+        /// <remarks>
+        /// You can override this method to provide alternative domain of uniquely identifying how a license is activated on a machine.
+        /// </remarks>
         public virtual string RegisterDomain()
         {
             string serialNumber = string.Empty;

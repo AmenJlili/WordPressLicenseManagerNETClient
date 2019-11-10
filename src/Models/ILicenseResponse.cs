@@ -52,7 +52,7 @@ namespace WordPressLicenseManagerNETClient.Models
         /// <summary>
         /// Renewal date
         /// </summary>
-         DateTime date_renewed { get;  }
+         DateTime DateRenewed { get;  }
        
         /// <summary>
         /// Expiry date
@@ -117,8 +117,10 @@ namespace WordPressLicenseManagerNETClient.Models
 
         [JsonProperty("date_created")]
         public DateTime DateCreated { get; private set;}
-        [JsonProperty("DateRenewed")]
-        public DateTime date_renewed { get; private set;}
+        
+        [JsonProperty("date_renewed")]
+        public DateTime DateRenewed { get; private set;}
+
         [JsonProperty("date_expiry")]
         public DateTime DateExpiry { get; private set;}
 
