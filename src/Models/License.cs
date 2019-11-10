@@ -44,10 +44,30 @@ namespace WordPressLicenseManagerNETClient.Models
         /// License key
         /// </summary>
         public string Key { get; set; }
+        /// <summary>
+        /// Product reference
+        /// </summary>
+        public string ProductReference { get;  set; }
+        /// <summary>
+        /// Expiry date
+        /// </summary>
+        public DateTime DateExpired { get;  set; }
+        /// <summary>
+        /// Renewal date
+        /// </summary>
+        public DateTime DateRenewed { get;  set; }
+        /// <summary>
+        /// Creation date
+        /// </summary>
+        public DateTime DateCreated { get;  set; }
+        /// <summary>
+        /// Subscriber ID
+        /// </summary>
+        public string SubscribedID { get;  set; }
 
 
         /// <summary>
-        /// Registered domain. 
+        /// Registered domain
         /// </summary>
         public readonly string RegisteredDomain;
 

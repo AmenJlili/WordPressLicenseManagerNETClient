@@ -26,7 +26,7 @@ namespace WPLMNETClient.NetFramework.Tests
 
             license = new License();
             license.Email = "amen@bluebyte.biz";
-            license.Key = "SillyPassword";
+            license.Key = "5db3244aef396";
             license.FirstName = "Amen";
             license.LastName = "Jlili";
             license.CompanyName = "Blue Byte LLC";

@@ -101,13 +101,14 @@ namespace WordPressLicenseManagerNETClient.Models
     class LicenseResponse : ILicenseResponse , INotifyPropertyChanged
     {
 
-        [JsonProperty("license_key")]
+      
+        [JsonProperty("key")]
         public string Key { get; private set;}
 
         [JsonProperty("status")]
         public string Status { get; private set;}
 
-        [JsonProperty("max_allowed_domains ")]
+        [JsonProperty("max_allowed_domains")]
         public int MaximumAllowedDomains { get; private set; } = 1;
         
         [JsonProperty("email")]

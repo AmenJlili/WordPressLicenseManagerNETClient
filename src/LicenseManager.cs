@@ -143,11 +143,6 @@ namespace WordPressLicenseManagerNETClient
                     // add first name
                     if (string.IsNullOrWhiteSpace(License.FirstName) == false)
                         restRequest.AddParameter("first_name", License.FirstName);
-                    // add domain 
-                    restRequest.AddParameter("registered_domain", License.RegisteredDomain);
-                    // add first name
-                    if (string.IsNullOrWhiteSpace(License.FirstName) == false)
-                        restRequest.AddParameter("first_name", License.FirstName);
                     // add last name 
                     if (string.IsNullOrWhiteSpace(License.LastName) == false)
                         restRequest.AddParameter("last_name", License.LastName);
@@ -164,6 +159,19 @@ namespace WordPressLicenseManagerNETClient
                 case WordPressLicenseManagerNETClient.Consts.Action.Create:
                     restRequest.AddParameter("secret_key", Configuration.SecretKey);
 
+                    
+                    restRequest.AddParameter("date_created", License.DateCreated);
+                    restRequest.AddParameter("date_renewed", License.DateRenewed);
+                    restRequest.AddParameter("date_expiry", License.DateExpired);
+
+                    // add product name
+                    if (string.IsNullOrWhiteSpace(License.ProductReference) == false)
+                        restRequest.AddParameter("product_reference", License.ProductReference);
+
+                    // add subscriber id 
+                    if (string.IsNullOrWhiteSpace(License.SubscribedID) == false)
+                        restRequest.AddParameter("subscriber_id", License.ProductReference);
+
                     // add first name
                     if (string.IsNullOrWhiteSpace(License.FirstName) == false)
                         restRequest.AddParameter("first_name", License.FirstName);
@@ -176,15 +184,12 @@ namespace WordPressLicenseManagerNETClient
                     // add email
                     if (string.IsNullOrWhiteSpace(License.Email) == false)
                         restRequest.AddParameter("email", License.Email);
-
-                    if (License.MaximumDomainAllowed >= 1)
+                    // add maximum number of domains allowed
+                    if (License.MaximumDomainAllowed >= 0)
                     restRequest.AddParameter("maximum_domained_allowed", License.MaximumDomainAllowed);
-                    else
-                        restRequest.AddParameter("maximum_domained_allowed", 1);
-
+                    // add license key
                     if (string.IsNullOrWhiteSpace(License.Key) == false)
                         restRequest.AddParameter("license_key", License.Key);
-
                     else
                         throw new NewLicenseEmptyKeyException("Cannot create license with empty key.");
 
