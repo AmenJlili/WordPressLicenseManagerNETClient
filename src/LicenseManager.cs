@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -42,9 +43,6 @@ namespace WordPressLicenseManagerNETClient
         {
             Configuration = configuration;
         }
-
-
-
         public ILicenseResponse PerformAction(Consts.Action action, License License)
         {
             if (Configuration == null)
@@ -63,8 +61,6 @@ namespace WordPressLicenseManagerNETClient
             var restRequest = new RestSharp.RestRequest();
             restRequest.Method = RestSharp.Method.POST;
             restRequest.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-
-
 
             if (action == Consts.Action.Unknown)
                 throw new UndefinedActionException("Undefined action.");
@@ -208,14 +204,23 @@ namespace WordPressLicenseManagerNETClient
                 // deserialize response 
                 var settings = new JsonSerializerSettings();
                 settings.MissingMemberHandling = MissingMemberHandling.Ignore;
+
+                var format = "dd-MM-yyyy";
+                var dateTimeConverter = new IsoDateTimeConverter { DateTimeFormat = format };
                 var converters = new List<JsonConverter>();
                 converters.Add(new AbstractConverter<LicenseResponse, ILicenseResponse>());
-
+                converters.Add(dateTimeConverter);
                 settings.Converters = converters;
 
-                return JsonConvert.DeserializeObject(content, typeof(ILicenseResponse), settings) as ILicenseResponse;
+                var ret =  JsonConvert.DeserializeObject(content, typeof(ILicenseResponse), settings) as ILicenseResponse;
 
-            };
+                // update key property when checking license 
+                
+                var concreteInstance = ret as LicenseResponse;
+                concreteInstance.Raise();
+                return concreteInstance as ILicenseResponse;
+
+              };
 
             return null;
            

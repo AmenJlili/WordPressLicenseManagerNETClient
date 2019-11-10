@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using WPLMNETClient.Models;
 
 namespace WordPressLicenseManagerNETClient.Models
 {
@@ -42,22 +43,22 @@ namespace WordPressLicenseManagerNETClient.Models
         /// <summary>
         /// List of registered domains
         /// </summary>
-         List<string> RegisteredDomains { get;  }
+         List<RegisteredDomain> RegisteredDomains { get;  }
 
         /// <summary>
         /// Creation date
         /// </summary>
-         DateTime DateCreated { get;  }
-       
+         string DateCreated { get;  }
+
         /// <summary>
         /// Renewal date
         /// </summary>
-         DateTime DateRenewed { get;  }
-       
+        string DateRenewed { get;  }
+
         /// <summary>
         /// Expiry date
         /// </summary>
-        DateTime DateExpiry { get;  }
+        string DateExpiry { get;  }
 
         /// <summary>
         /// Product reference
@@ -101,7 +102,17 @@ namespace WordPressLicenseManagerNETClient.Models
     class LicenseResponse : ILicenseResponse , INotifyPropertyChanged
     {
 
-      
+        [JsonProperty("license_key")]
+        private string licenseKey = string.Empty;
+        public string LicenseKey
+        {
+            get { return licenseKey; }
+            set {
+
+                licenseKey = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("LicenseKey")); }
+        }
+
         [JsonProperty("key")]
         public string Key { get; private set;}
 
@@ -114,16 +125,16 @@ namespace WordPressLicenseManagerNETClient.Models
         [JsonProperty("email")]
         public string Email { get; private set;}
         [JsonProperty("registered_domains")]
-        public List<string> RegisteredDomains { get; private set;}
+        public List<RegisteredDomain> RegisteredDomains { get; private set;}
 
         [JsonProperty("date_created")]
-        public DateTime DateCreated { get; private set;}
+        public string DateCreated { get; private set;}
         
         [JsonProperty("date_renewed")]
-        public DateTime DateRenewed { get; private set;}
+        public string DateRenewed { get; private set;}
 
         [JsonProperty("date_expiry")]
-        public DateTime DateExpiry { get; private set;}
+        public string DateExpiry { get; private set;}
 
 
         [JsonProperty("product_ref")]
@@ -172,6 +183,13 @@ namespace WordPressLicenseManagerNETClient.Models
                 else
                     Success = true; 
             }
+            
+        }
+
+        public void Raise() 
+        {
+            if (string.IsNullOrWhiteSpace(LicenseKey) == false)
+                Key = LicenseKey;
         }
     } 
 }

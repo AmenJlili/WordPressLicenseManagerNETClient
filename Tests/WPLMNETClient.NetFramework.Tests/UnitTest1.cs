@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordPressLicenseManagerNETClient;
 using WordPressLicenseManagerNETClient.Models;
@@ -59,7 +60,7 @@ namespace WPLMNETClient.NetFramework.Tests
             if (licenseResponse.Success == false)
                 throw new Exception(licenseResponse.Message);
             else
-                Assert.IsTrue(licenseResponse.Success, $"Domains: {string.Join(", ", licenseResponse.RegisteredDomains.ToArray())}");
+                Assert.IsTrue(licenseResponse.Success, $"Key {licenseResponse.Key}: Domains: {string.Join(", ", licenseResponse.RegisteredDomains.Select(x=> x.Value).ToArray())}");
         }
 
         [TestMethod]
