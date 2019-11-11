@@ -14,3 +14,4 @@ P:\Blue Byte LLC\src\WPLicenseManagerClient\src\obj\Debug\netstandard2.0\WPLMNET
 P:\Blue Byte LLC\src\WPLicenseManagerClient\src\obj\Debug\netstandard2.0\WPLMNETClient.AssemblyInfo.cs
 P:\Blue Byte LLC\src\WPLicenseManagerClient\src\obj\Debug\netstandard2.0\WPLMNETClient.dll
 P:\Blue Byte LLC\src\WPLicenseManagerClient\src\obj\Debug\netstandard2.0\WPLMNETClient.pdb
+P:\Blue Byte LLC\src\WPLicenseManagerClient\src\bin\Debug\netstandard2.0\WPLMNETClient.xml

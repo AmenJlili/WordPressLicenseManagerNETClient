@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WPLMNETClient</name>
+    </assembly>
+    <members>
+        <member name="T:WordPressLicenseManagerNETClient.Consts.Action">
+            <summary>
+            License actions. Used by <see cref="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)"></see> or <see cref="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformActionAsync(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)"></see>
+            </summary>
+        </member>
+        <member name="F:WordPressLicenseManagerNETClient.Consts.Action.Unknown">
+            <summary>
+            Default value
+            </summary>
+        </member>
+        <member name="F:WordPressLicenseManagerNETClient.Consts.Action.Create">
+            <summary>
+            Create a new license
+            </summary>
+        </member>
+        <member name="F:WordPressLicenseManagerNETClient.Consts.Action.Activate">
+            <summary>
+            Activate an existing license
+            </summary>
+        </member>
+        <member name="F:WordPressLicenseManagerNETClient.Consts.Action.Deactivate">
+            <summary>
+            Deactivate an existing license
+            </summary>
+        </member>
+        <member name="F:WordPressLicenseManagerNETClient.Consts.Action.Check">
+            <summary>
+            Check an existing license
+            </summary>
+        </member>
+        <member name="T:WordPressLicenseManagerNETClient.LicenseManagerFactory">
+            <summary>
+            License Manager Factory. 
+            </summary>
+        </member>
+        <member name="M:WordPressLicenseManagerNETClient.LicenseManagerFactory.New(WordPressLicenseManagerNETClient.Models.Configuration)">
+            <summary>
+            Creates a new instance of the <see cref="T:WordPressLicenseManagerNETClient.ILicenseManager"/>.
+            </summary>
+            <param name="Configuration">Configuration object</param>
+            <returns><see cref="T:WordPressLicenseManagerNETClient.ILicenseManager"/></returns>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.LicenseManager.Configuration">
+            <summary>
+            Configuration object.
+            </summary>
+        </member>
+        <member name="T:WordPressLicenseManagerNETClient.ILicenseManager">
+            <summary>
+            License Manager
+            </summary>
+        </member>
+        <member name="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)">
+            <summary>
+            Performs an action. Check <see cref="T:WordPressLicenseManagerNETClient.Consts.Action"></see> for actions.
+            </summary>
+            <param name="action">Action</param>
+            <param name="License">License</param>
+            <returns><seealso cref="T:WordPressLicenseManagerNETClient.Models.ILicenseResponse"/></returns>
+        </member>
+        <member name="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformActionAsync(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)">
+            <summary>
+            Performs an action asynchronously. Check <see cref="T:WordPressLicenseManagerNETClient.Consts.Action"></see> for actions.
+            </summary>
+            <param name="action">Action</param>
+            <param name="License">License</param>
+            <returns><seealso cref="T:WordPressLicenseManagerNETClient.Models.ILicenseResponse"/></returns>
+        </member>
+        <member name="T:WordPressLicenseManagerNETClient.Models.Configuration">
+            <summary>
+            <see cref="T:WordPressLicenseManagerNETClient.ILicenseManager"/>'s configuration
+            </summary>
+        </member>
+        <member name="M:WordPressLicenseManagerNETClient.Models.Configuration.#ctor">
+            <summary>
+            Creates a new instance of the configuration class.
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.Configuration.PostURL">
+            <summary>
+            Base URL
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.Configuration.ActivationKey">
+            <summary>
+            Activation/Deactivation key
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.Configuration.SecretKey">
+            <summary>
+            Secret key
+            </summary>
+        </member>
+        <member name="T:WordPressLicenseManagerNETClient.Models.ILicenseResponse">
+            <summary>
+            License response
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Success">
+            <summary>
+            Success or failure
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Message">
+            <summary>
+            Response message
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Key">
+            <summary>
+            License key
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Status">
+            <summary>
+            License status
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.MaximumAllowedDomains">
+            <summary>
+            Maximum of allowed domains
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.RegisteredDomains">
+            <summary>
+            List of registered domains
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.DateCreated">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.DateRenewed">
+            <summary>
+            Renewal date
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.DateExpiry">
+            <summary>
+            Expiry date
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.ProductReference">
+            <summary>
+            Product reference
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.FirstName">
+            <summary>
+             First name
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.LastName">
+            <summary>
+            Last name
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.CompanyName">
+            <summary>
+            Company name
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.TaxID">
+            <summary>
+            Tax ID
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.SubscriberID">
+            <summary>
+            Susbcriber ID
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.ErrorCode">
+            <summary>
+            Error code
+            </summary>
+        </member>
+        <member name="T:WordPressLicenseManagerNETClient.Models.License">
+            <summary>
+            License object
+            </summary>
+        </member>
+        <member name="M:WordPressLicenseManagerNETClient.Models.License.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.FirstName">
+            <summary>
+            First name
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.LastName">
+            <summary>
+            Last name
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.CompanyName">
+            <summary>
+            Company name
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.TransactionID">
+            <summary>
+            Transaction ID.
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.MaximumDomainAllowed">
+            <summary>
+            Maximum number of allowed domains
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.Key">
+            <summary>
+            License key
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.ProductReference">
+            <summary>
+            Product reference
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.DateExpired">
+            <summary>
+            Expiry date
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.DateRenewed">
+            <summary>
+            Renewal date
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.DateCreated">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.SubscribedID">
+            <summary>
+            Subscriber ID
+            </summary>
+        </member>
+        <member name="F:WordPressLicenseManagerNETClient.Models.License.RegisteredDomain">
+            <summary>
+            Registered domain
+            </summary>
+        </member>
+        <member name="M:WordPressLicenseManagerNETClient.Models.License.RegisterDomain">
+            <summary>
+            Registers the current domain. Default implementation returns a string in the following format: "MachineNode: MACHINENAME - [{CPU_BIOS_SERIAL_NUMBER}]"
+            </summary>
+            <remarks>
+            You can override this method to provide alternative domain of uniquely identifying how a license is activated on a machine.
+            </remarks>
+        </member>
+        <member name="T:WordPressLicenseManagerNETClient.Models.RegisteredDomain">
+            <summary>
+            Registered domain
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.RegisteredDomain.ID">
+            <summary>
+            ID of the registered domain 
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.RegisteredDomain.LicenseID">
+            <summary>
+            License ID 
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.RegisteredDomain.LicenseKey">
+            <summary>
+            License key 
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.RegisteredDomain.Value">
+            <summary>
+            Value of the registered domain 
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.RegisteredDomain.ItemReference">
+            <summary>
+            Item reference 
+            </summary>
+        </member>
+    </members>
+</doc>

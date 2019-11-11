@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WPLMNETClient.Models
+namespace WordPressLicenseManagerNETClient.Models
 {
     /// <summary>
     /// Registered domain

@@ -1,0 +1,1 @@
+nuget pack ..\src\WPLMNETClient.csproj -outputdirectory C:\Nuget

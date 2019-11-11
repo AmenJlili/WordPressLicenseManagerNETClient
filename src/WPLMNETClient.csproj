@@ -4,12 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>P:\Blue Byte LLC\src\WPLicenseManagerClient\src\WPLMNETClient.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="WPLMNETClient.NetFramework.Tests\**" />
     <EmbeddedResource Remove="WPLMNETClient.NetFramework.Tests\**" />
     <None Remove="WPLMNETClient.NetFramework.Tests\**" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="RestSharp" Version="106.6.10" />
