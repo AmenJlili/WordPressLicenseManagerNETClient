@@ -9,7 +9,7 @@
     <description>WordPress License Manager .NET Client</description>
     <releaseNotes>This is .NET Standard client.</releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>WordPress License</tags>
+    <tags>WordPress License WordPressLicenseManagerNETClient</tags>
     <dependencies>
       <dependency id="RestSharp" />
       <dependency id="Newtonsoft.Json" />
