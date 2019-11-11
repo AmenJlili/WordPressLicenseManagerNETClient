@@ -15,7 +15,8 @@ The configuration class is where you stored the credentials required. The ``` se
 
 This sample shows how to activate a pending license. Deactivation and creation of license is very similar to this example.
 
- ``` 
+ ```csharp 
+ 
         Configuration configuration = default(Configuration);
         ILicenseManager licenseManager = default(ILicenseManager);
         License license = default(License);
