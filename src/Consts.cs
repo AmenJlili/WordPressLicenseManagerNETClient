@@ -3,7 +3,7 @@
 namespace WordPressLicenseManagerNETClient.Consts
 {
     /// <summary>
-    /// Actions
+    /// License actions. Used by <see cref="ILicenseManager.PerformAction(Action, Models.License)"></see> or <see cref="ILicenseManager.PerformActionAsync(Action, Models.License)"></see>
     /// </summary>
     public enum Action
     {

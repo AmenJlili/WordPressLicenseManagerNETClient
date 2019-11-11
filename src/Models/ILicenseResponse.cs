@@ -17,7 +17,7 @@ namespace WordPressLicenseManagerNETClient.Models
         /// </summary>
         bool Success { get; }
         /// <summary>
-        /// Web response message
+        /// Response message
         /// </summary>
         string Message { get; }
      
@@ -83,7 +83,7 @@ namespace WordPressLicenseManagerNETClient.Models
         string TaxID { get;  }
 
         /// <summary>
-        /// Susbcriber code
+        /// Susbcriber ID
         /// </summary>
         string SubscriberID { get;  }
         /// <summary>

@@ -5,12 +5,12 @@ using System.Text;
 namespace WordPressLicenseManagerNETClient.Models
 {
     /// <summary>
-    /// Client configuration class.
+    /// <see cref="ILicenseManager"/>'s configuration
     /// </summary>
     public class Configuration
     {
         /// <summary>
-        /// Creates a new instance.
+        /// Creates a new instance of the configuration class.
         /// </summary>
         public Configuration()
         {
