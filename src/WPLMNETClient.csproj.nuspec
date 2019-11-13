@@ -3,10 +3,11 @@
   <metadata>
     <id>WordPressLicenseManagerNETClient</id>
     <version>1.0.0</version>
+<iconUrl>https://icons-for-free.com/iconfiles/png/512/key-131964784882661989.png</iconUrl>
     <authors>Amen Jlili</authors>
     <owners>Amen Jlili</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>WordPress License Manager .NET Client</description>
+    <description>.NET standard client for the WordPress License Manager plugin.</description>
     <releaseNotes>This is .NET Standard client.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>WordPress License WordPressLicenseManagerNETClient</tags>
