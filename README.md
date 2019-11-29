@@ -1,12 +1,12 @@
+![NuGet](https://img.shields.io/nuget/v/WPLMNETClient.svg) 
+
 # WordPressLicenseManagerNETClient
 A .NET standard client for  Software License Manager (https://wordpress.org/plugins/software-license-manager/)
 
 
 # NuGet
-Target your .NET framework projects to version 7.0 or newer to be able to use this NuGet package.
-
-The NuGet package has been not uploaded to NuGet.org yet.
-
+``` Install-Package WPLMNETClient -Version 1.0.0 ```
+ 
 # Examples
 
 ## Actions 
