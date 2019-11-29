@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Amen Jlili</Authors>
+    <Company>Blue Byte LLC</Company>
+    <Description>.NET standard client for the WordPress License Manager plugin.</Description>
+    <PackageTags>WordPress License WordPressLicenseManagerNETClient</PackageTags>
+    <PackageReleaseNotes>This is .NET Standard client.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/jliliamen/WordPressLicenseManagerNETClient</PackageProjectUrl>
+    <PackageIconUrl>https://icons-for-free.com/iconfiles/png/512/key-131964784882661989.png</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

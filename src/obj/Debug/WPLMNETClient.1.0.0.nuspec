@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>WPLMNETClient</id>
+    <version>1.0.0</version>
+    <authors>Amen Jlili</authors>
+    <owners>Amen Jlili</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/jliliamen/WordPressLicenseManagerNETClient</projectUrl>
+    <iconUrl>https://icons-for-free.com/iconfiles/png/512/key-131964784882661989.png</iconUrl>
+    <description>.NET standard client for the WordPress License Manager plugin.</description>
+    <releaseNotes>This is .NET Standard client.</releaseNotes>
+    <tags>WordPress License WordPressLicenseManagerNETClient</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Newtonsoft.Json" version="12.0.2" exclude="Build,Analyzers" />
+        <dependency id="RestSharp" version="106.6.10" exclude="Build,Analyzers" />
+        <dependency id="System.Management" version="4.6.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="P:\Blue Byte LLC\src\WPLicenseManagerClient\src\bin\Debug\netstandard2.0\WPLMNETClient.dll" target="lib\netstandard2.0\WPLMNETClient.dll" />
+    <file src="P:\Blue Byte LLC\src\WPLicenseManagerClient\src\bin\Debug\netstandard2.0\WPLMNETClient.xml" target="lib\netstandard2.0\WPLMNETClient.xml" />
+  </files>
+</package>
