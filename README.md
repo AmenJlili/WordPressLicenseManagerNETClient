@@ -5,7 +5,8 @@ A .NET standard client for  Software License Manager (https://wordpress.org/plug
 
 
 # NuGet
-``` Install-Package WPLMNETClient -Version 1.0.0 ```
+
+``` Install-Package WPLMNETClient ```
  
 # Examples
 
