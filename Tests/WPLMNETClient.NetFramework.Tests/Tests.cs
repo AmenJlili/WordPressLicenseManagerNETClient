@@ -18,7 +18,7 @@ namespace WPLMNETClient.NetFramework.Tests
         {
 
             configuration = new Configuration();
-            configuration.PostURL = "http://bluebyte.biz";
+            configuration.PostURL = "https://bluebyte.biz";
             configuration.ActivationKey = "5dac72c4d41999.62508674";
             configuration.SecretKey = "5dac72c4d41910.86584044";
 
@@ -38,7 +38,7 @@ namespace WPLMNETClient.NetFramework.Tests
         [TestMethod]
         public void ActivateLicenseKey()
         {
-            var licenseResponse = licenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action.Activate, license);
+            var licenseResponse = licenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action.Activate, new License());
             if (licenseResponse.Success == false)
                 throw new Exception(licenseResponse.Message);
             else
