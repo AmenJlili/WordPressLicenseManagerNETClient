@@ -30,15 +30,15 @@ This sample shows how to activate a pending license. Deactivation and creation o
         {
             // create configuration object
             configuration = new Configuration();
-            configuration.PostURL = "http://bluebyte.biz";
-            configuration.ActivationKey = "abcdefiglkldmogl";
-            configuration.SecretKey = "abcdefiglkldmogl";
+            configuration.PostURL = "http://chucknorris.co";
+            configuration.ActivationKey = "abc";
+            configuration.SecretKey = "123";
             // create license manager
             licenseManager = LicenseManagerFactory.New(configuration);
             // create license object 
             license = new License();
-            license.Email = "chucknorris@thewebrevolvesaroundme.cn";
-            license.Key = "abcdefiglkldmogl";
+            license.Email = "charles@chucknorris.co";
+            license.Key = "password123";
             license.FirstName = "Chuck";
             license.LastName = "Norris";
             license.CompanyName = "Chuck Norris Unlimited Liability Co";
