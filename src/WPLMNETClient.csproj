@@ -2,21 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Amen Jlili</Authors>
+    <Authors>Amen Jlili / fix xavave</Authors>
     <Company>Blue Byte LLC</Company>
     <Description>.NET standard client for the WordPress License Manager plugin.</Description>
     <PackageTags>WordPress License WordPressLicenseManagerNETClient</PackageTags>
     <PackageReleaseNotes>This is .NET Standard client.</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/jliliamen/WordPressLicenseManagerNETClient</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/xavave/WordPressLicenseManagerNETClient</PackageProjectUrl>
     <PackageIconUrl>https://icons-for-free.com/iconfiles/png/512/key-131964784882661989.png</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <Version>1.0.11</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>P:\Blue Byte LLC\src\WPLicenseManagerClient\src\WPLMNETClient.xml</DocumentationFile>
+    <DocumentationFile>WPLMNETClient.xml</DocumentationFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

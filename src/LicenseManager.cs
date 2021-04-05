@@ -69,7 +69,7 @@ namespace WordPressLicenseManagerNETClient
 
             var restClient = new RestSharp.RestClient(Configuration.PostURL);
             var restRequest = new RestSharp.RestRequest();
-            restRequest.Method = RestSharp.Method.POST;
+            restRequest.Method = RestSharp.Method.GET;
             restRequest.AddHeader("Content-Type", "application/x-www-form-urlencoded");
 
             if (action == Consts.Action.Unknown)
