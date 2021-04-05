@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+
 using WordPressLicenseManagerNETClient.Models;
 
 namespace WordPressLicenseManagerNETClient
@@ -15,7 +17,7 @@ namespace WordPressLicenseManagerNETClient
     /// </summary>
     public static class LicenseManagerFactory
     {
-        
+
         /// <summary>
         /// Creates a new instance of the <see cref="ILicenseManager"/>.
         /// </summary>
@@ -43,9 +45,9 @@ namespace WordPressLicenseManagerNETClient
         {
             Configuration = configuration;
         }
-        public ILicenseResponse PerformAction(Consts.Action action, License license)
+        public ILicenseResponse PerformAction(Consts.Action action, License license, RestSharp.Method httpMethod = RestSharp.Method.GET)
         {
-            if(license == null)
+            if (license == null)
                 throw new ArgumentNullException("license");
 
 
@@ -59,17 +61,17 @@ namespace WordPressLicenseManagerNETClient
                 throw new NullReferenceException("The PostURL of the specified configuration object is white space or null.");
 
             if (action == Consts.Action.Create)
-               if (string.IsNullOrWhiteSpace(Configuration.SecretKey))
-                       throw new NullReferenceException("The SecretKey of the specified configuration object is an empty string or null.");
+                if (string.IsNullOrWhiteSpace(Configuration.SecretKey))
+                    throw new NullReferenceException("The SecretKey of the specified configuration object is an empty string or null.");
 
             if (action != Consts.Action.Create)
                 if (string.IsNullOrWhiteSpace(Configuration.ActivationKey))
-                throw new NullReferenceException("the ActivationKey of the specified configuration object is white space or null.");
+                    throw new NullReferenceException("the ActivationKey of the specified configuration object is white space or null.");
 
 
             var restClient = new RestSharp.RestClient(Configuration.PostURL);
             var restRequest = new RestSharp.RestRequest();
-            restRequest.Method = RestSharp.Method.GET;
+            restRequest.Method = httpMethod;
             restRequest.AddHeader("Content-Type", "application/x-www-form-urlencoded");
 
             if (action == Consts.Action.Unknown)
@@ -82,14 +84,14 @@ namespace WordPressLicenseManagerNETClient
             }
 
 
-            
+
 
             switch (action)
             {
                 case WordPressLicenseManagerNETClient.Consts.Action.Unknown:
                     break;
                 case WordPressLicenseManagerNETClient.Consts.Action.Activate:
-                    
+
                     restRequest.AddParameter("secret_key", Configuration.ActivationKey);
 
                     // add first name
@@ -116,9 +118,9 @@ namespace WordPressLicenseManagerNETClient
 
                     break;
                 case WordPressLicenseManagerNETClient.Consts.Action.Deactivate:
-                    
+
                     restRequest.AddParameter("secret_key", Configuration.ActivationKey);
-                  
+
                     // add first name
                     if (string.IsNullOrWhiteSpace(license.FirstName) == false)
                         restRequest.AddParameter("first_name", license.FirstName);
@@ -139,7 +141,7 @@ namespace WordPressLicenseManagerNETClient
 
                     if (string.IsNullOrWhiteSpace(license.Key) == false)
                         restRequest.AddParameter("license_key", license.Key);
- 
+
                     break;
 
 
@@ -165,7 +167,7 @@ namespace WordPressLicenseManagerNETClient
                 case WordPressLicenseManagerNETClient.Consts.Action.Create:
                     restRequest.AddParameter("secret_key", Configuration.SecretKey);
 
-                    
+
                     restRequest.AddParameter("date_created", license.DateCreated);
                     restRequest.AddParameter("date_renewed", license.DateRenewed);
                     restRequest.AddParameter("date_expiry", license.DateExpired);
@@ -192,7 +194,7 @@ namespace WordPressLicenseManagerNETClient
                         restRequest.AddParameter("email", license.Email);
                     // add maximum number of domains allowed
                     if (license.MaximumDomainAllowed >= 0)
-                    restRequest.AddParameter("maximum_domained_allowed", license.MaximumDomainAllowed);
+                        restRequest.AddParameter("maximum_domained_allowed", license.MaximumDomainAllowed);
                     // add license key
                     if (string.IsNullOrWhiteSpace(license.Key) == false)
                         restRequest.AddParameter("license_key", license.Key);
@@ -222,30 +224,31 @@ namespace WordPressLicenseManagerNETClient
                 converters.Add(dateTimeConverter);
                 settings.Converters = converters;
 
-                var ret =  JsonConvert.DeserializeObject(content, typeof(ILicenseResponse), settings) as ILicenseResponse;
+                var ret = JsonConvert.DeserializeObject(content, typeof(ILicenseResponse), settings) as ILicenseResponse;
 
                 // update key property when checking license 
-                
+
                 var concreteInstance = ret as LicenseResponse;
                 concreteInstance.Raise();
                 return concreteInstance as ILicenseResponse;
 
-              };
+            };
 
             return null;
-           
+
         }
-    
-        public Task<ILicenseResponse> PerformActionAsync(Consts.Action action, License License) 
+
+        public Task<ILicenseResponse> PerformActionAsync(Consts.Action action, License License, RestSharp.Method httpMethod = RestSharp.Method.GET)
         {
-            return Task.Run(() => {
+            return Task.Run(() =>
+            {
                 return PerformAction(action, License);
             });
         }
-          
-        
 
-        
+
+
+
     }
 
 
@@ -260,21 +263,23 @@ namespace WordPressLicenseManagerNETClient
         /// </summary>
         /// <param name="action">Action</param>
         /// <param name="License">License</param>
+        /// <param name="httpMethod">Http Method</param>
         /// <returns><seealso cref="ILicenseResponse"/></returns>
-        ILicenseResponse PerformAction(Consts.Action action, License License);
+        ILicenseResponse PerformAction(Consts.Action action, License License, RestSharp.Method httpMethod = RestSharp.Method.GET);
         /// <summary>
         /// Performs an action asynchronously. Check <see cref="Consts.Action"></see> for actions.
         /// </summary>
         /// <param name="action">Action</param>
         /// <param name="License">License</param>
+        /// <param name="httpMethod">Http Method</param>
         /// <returns><seealso cref="ILicenseResponse"/></returns>
-        Task<ILicenseResponse> PerformActionAsync(Consts.Action action, License License);
+        Task<ILicenseResponse> PerformActionAsync(Consts.Action action, License License, RestSharp.Method httpMethod = RestSharp.Method.GET);
     }
 
 
- 
 
- 
+
+
 
 }
 
