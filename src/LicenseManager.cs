@@ -168,17 +168,17 @@ namespace WordPressLicenseManagerNETClient
                     restRequest.AddParameter("secret_key", Configuration.SecretKey);
 
 
-                    restRequest.AddParameter("date_created", license.DateCreated);
-                    restRequest.AddParameter("date_renewed", license.DateRenewed);
-                    restRequest.AddParameter("date_expiry", license.DateExpired);
+                    restRequest.AddParameter("date_created", license.DateCreated.ToString("yyyy-MM-dd"));
+                    restRequest.AddParameter("date_renewed", license.DateRenewed.ToString("yyyy-MM-dd"));
+                    restRequest.AddParameter("date_expiry", license.DateExpired.ToString("yyyy-MM-dd"));
 
                     // add product name
                     if (string.IsNullOrWhiteSpace(license.ProductReference) == false)
-                        restRequest.AddParameter("product_reference", license.ProductReference);
+                        restRequest.AddParameter("product_reference", license.RegisteredDomain);
 
                     // add subscriber id 
                     if (string.IsNullOrWhiteSpace(license.SubscribedID) == false)
-                        restRequest.AddParameter("subscriber_id", license.ProductReference);
+                        restRequest.AddParameter("subscriber_id", license.RegisteredDomain);
 
                     // add first name
                     if (string.IsNullOrWhiteSpace(license.FirstName) == false)
