@@ -32,14 +32,18 @@ namespace WordPressLicenseManagerNETClient.Models
         // To detect redundant calls
         private bool _disposed = false;
 
-        // Public implementation of Dispose pattern callable by consumers.
+        /// <summary>
+        /// Public implementation of Dispose pattern callable by consumers.
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
-        // Protected implementation of Dispose pattern.
+        /// <summary>
+        ///Protected implementation of Dispose pattern.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

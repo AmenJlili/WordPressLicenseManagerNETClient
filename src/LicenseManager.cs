@@ -164,6 +164,7 @@ namespace WordPressLicenseManagerNETClient
                     if (string.IsNullOrWhiteSpace(license.Key) == false)
                         restRequest.AddParameter("license_key", license.Key);
                     break;
+
                 case WordPressLicenseManagerNETClient.Consts.Action.Create:
                     restRequest.AddParameter("secret_key", Configuration.SecretKey);
 
@@ -183,6 +184,18 @@ namespace WordPressLicenseManagerNETClient
                     // add subscriber id 
                     if (string.IsNullOrWhiteSpace(license.SubscriberID) == false)
                         restRequest.AddParameter("subscr_id", license.SubscriberID);
+
+                    // add mode
+                    if (string.IsNullOrWhiteSpace(license.Mode) == false)
+                        restRequest.AddParameter("lic_mode", license.Mode);
+
+                    // add software version
+                    if (string.IsNullOrWhiteSpace(license.Version) == false)
+                        restRequest.AddParameter("version", license.Version);
+
+                    // add ip address
+                    if (string.IsNullOrWhiteSpace(license.IpAddress) == false)
+                        restRequest.AddParameter("ip_address", license.IpAddress);
 
                     // add registered domain 
                     if (string.IsNullOrWhiteSpace(license.RegisteredDomain) == false)

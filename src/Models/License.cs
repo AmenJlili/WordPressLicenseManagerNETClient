@@ -70,6 +70,19 @@ namespace WordPressLicenseManagerNETClient.Models
         /// Subscriber ID
         /// </summary>
         public string SubscriberID { get;  set; }
+        /// <summary>
+        /// mode (trial/registered)
+        /// </summary>
+        public string Mode { get;  set; }
+
+        /// <summary>
+        /// software version
+        /// </summary>
+        public string Version { get;  set; }
+        /// <summary>
+        /// ip address
+        /// </summary>
+        public string IpAddress { get;  set; }
 
 
         /// <summary>
