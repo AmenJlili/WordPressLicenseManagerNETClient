@@ -178,7 +178,11 @@ namespace WordPressLicenseManagerNETClient
 
                     // add subscriber id 
                     if (string.IsNullOrWhiteSpace(license.SubscriberID) == false)
-                        restRequest.AddParameter("subscr_id", license.RegisteredDomain);
+                        restRequest.AddParameter("subscr_id", license.SubscriberID);
+
+                    // add registered domain 
+                    if (string.IsNullOrWhiteSpace(license.RegisteredDomain) == false)
+                        restRequest.AddParameter("registered_domain", license.RegisteredDomain);
 
                     // add first name
                     if (string.IsNullOrWhiteSpace(license.FirstName) == false)
