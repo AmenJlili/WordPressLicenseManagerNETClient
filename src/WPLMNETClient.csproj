@@ -10,17 +10,19 @@
     <PackageProjectUrl>https://github.com/jliliamen/WordPressLicenseManagerNETClient</PackageProjectUrl>
     <PackageIconUrl>https://icons-for-free.com/iconfiles/png/512/key-131964784882661989.png</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <Version>1.0.13</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>P:\Blue Byte LLC\src\WPLicenseManagerClient\src\WPLMNETClient.xml</DocumentationFile>
+    <DocumentationFile>WPLMNETClient.xml</DocumentationFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>P:\Blue Byte LLC\src\WPLicenseManagerClient\src\WPLMNETClient.xml</DocumentationFile>
+    <DocumentationFile>WPLMNETClient.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,9 +31,9 @@
     <None Remove="WPLMNETClient.NetFramework.Tests\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="RestSharp" Version="106.6.10" />
-    <PackageReference Include="System.Management" Version="4.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="System.Management" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

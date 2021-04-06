@@ -6,7 +6,7 @@
     <members>
         <member name="T:WordPressLicenseManagerNETClient.Consts.Action">
             <summary>
-            License actions. Used by <see cref="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)"></see> or <see cref="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformActionAsync(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)"></see>
+            License actions. Used by <see cref="!:ILicenseManager.PerformAction(Action, Models.License)"></see> or <see cref="!:ILicenseManager.PerformActionAsync(Action, Models.License)"></see>
             </summary>
         </member>
         <member name="F:WordPressLicenseManagerNETClient.Consts.Action.Unknown">
@@ -56,20 +56,22 @@
             License Manager
             </summary>
         </member>
-        <member name="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)">
+        <member name="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License,RestSharp.Method)">
             <summary>
             Performs an action. Check <see cref="T:WordPressLicenseManagerNETClient.Consts.Action"></see> for actions.
             </summary>
             <param name="action">Action</param>
             <param name="License">License</param>
+            <param name="httpMethod">Http Method</param>
             <returns><seealso cref="T:WordPressLicenseManagerNETClient.Models.ILicenseResponse"/></returns>
         </member>
-        <member name="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformActionAsync(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License)">
+        <member name="M:WordPressLicenseManagerNETClient.ILicenseManager.PerformActionAsync(WordPressLicenseManagerNETClient.Consts.Action,WordPressLicenseManagerNETClient.Models.License,RestSharp.Method)">
             <summary>
             Performs an action asynchronously. Check <see cref="T:WordPressLicenseManagerNETClient.Consts.Action"></see> for actions.
             </summary>
             <param name="action">Action</param>
             <param name="License">License</param>
+            <param name="httpMethod">Http Method</param>
             <returns><seealso cref="T:WordPressLicenseManagerNETClient.Models.ILicenseResponse"/></returns>
         </member>
         <member name="T:WordPressLicenseManagerNETClient.Models.Configuration">
@@ -97,6 +99,16 @@
             Secret key
             </summary>
         </member>
+        <member name="M:WordPressLicenseManagerNETClient.Models.Configuration.Dispose">
+            <summary>
+            Public implementation of Dispose pattern callable by consumers.
+            </summary>
+        </member>
+        <member name="M:WordPressLicenseManagerNETClient.Models.Configuration.Dispose(System.Boolean)">
+             <summary>
+            Protected implementation of Dispose pattern.
+             </summary>
+        </member>
         <member name="T:WordPressLicenseManagerNETClient.Models.ILicenseResponse">
             <summary>
             License response
@@ -120,6 +132,21 @@
         <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Status">
             <summary>
             License status
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Mode">
+            <summary>
+            License mode (trial/registered)
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.IPAddress">
+            <summary>
+            IP Address
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.Version">
+            <summary>
+            Software version
             </summary>
         </member>
         <member name="P:WordPressLicenseManagerNETClient.Models.ILicenseResponse.MaximumAllowedDomains">
@@ -197,6 +224,11 @@
             Creates a new instance.
             </summary>
         </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
         <member name="P:WordPressLicenseManagerNETClient.Models.License.FirstName">
             <summary>
             First name
@@ -252,9 +284,24 @@
             Creation date
             </summary>
         </member>
-        <member name="P:WordPressLicenseManagerNETClient.Models.License.SubscribedID">
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.SubscriberID">
             <summary>
             Subscriber ID
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.Mode">
+            <summary>
+            mode (trial/registered)
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.Version">
+            <summary>
+            software version
+            </summary>
+        </member>
+        <member name="P:WordPressLicenseManagerNETClient.Models.License.IpAddress">
+            <summary>
+            ip address
             </summary>
         </member>
         <member name="F:WordPressLicenseManagerNETClient.Models.License.RegisteredDomain">

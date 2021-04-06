@@ -18,19 +18,19 @@ namespace WPLMNETClient.NetFramework.Tests
         {
 
             configuration = new Configuration();
-            configuration.PostURL = "https://bluebyte.biz";
-            configuration.ActivationKey = "5dac72c4d41999.62508674";
-            configuration.SecretKey = "5dac72c4d41910.86584044";
+            configuration.PostURL = "yourtestURL";
+            configuration.ActivationKey = "youractivationkey";
+            configuration.SecretKey = "yoursecretkey";
 
             licenseManager = LicenseManagerFactory.New(configuration);
 
 
             license = new License();
-            license.Email = "amen@bluebyte.biz";
-            license.Key = "5db3244aef396";
-            license.FirstName = "Amen";
-            license.LastName = "Jlili";
-            license.CompanyName = "Blue Byte LLC";
+            license.Email = "yourclientemail";
+            license.Key = "yourlicensekey";
+            license.FirstName = "firstname";
+            license.LastName = "lastname";
+            license.CompanyName = "company name";
             license.MaximumDomainAllowed = 1;
         }
 

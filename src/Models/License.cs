@@ -16,6 +16,12 @@ namespace WordPressLicenseManagerNETClient.Models
         {
             RegisteredDomain = RegisterDomain();
         }
+
+        /// <summary>
+        /// Id
+        /// </summary>
+        public string Id { get; set; }
+
         /// <summary>
         /// First name
         /// </summary>
@@ -63,7 +69,20 @@ namespace WordPressLicenseManagerNETClient.Models
         /// <summary>
         /// Subscriber ID
         /// </summary>
-        public string SubscribedID { get;  set; }
+        public string SubscriberID { get;  set; }
+        /// <summary>
+        /// mode (trial/registered)
+        /// </summary>
+        public string Mode { get;  set; }
+
+        /// <summary>
+        /// software version
+        /// </summary>
+        public string Version { get;  set; }
+        /// <summary>
+        /// ip address
+        /// </summary>
+        public string IpAddress { get;  set; }
 
 
         /// <summary>
