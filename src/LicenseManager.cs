@@ -172,6 +172,10 @@ namespace WordPressLicenseManagerNETClient
                     restRequest.AddParameter("date_renewed", license.DateRenewed.ToString("yyyy-MM-dd"));
                     restRequest.AddParameter("date_expiry", license.DateExpired.ToString("yyyy-MM-dd"));
 
+                    // add license ID : update if provided, if not : create
+                    if (!string.IsNullOrWhiteSpace(license.Id))
+                        restRequest.AddParameter("id", license.Id);
+
                     // add product name
                     if (string.IsNullOrWhiteSpace(license.ProductReference) == false)
                         restRequest.AddParameter("product_ref", license.ProductReference);

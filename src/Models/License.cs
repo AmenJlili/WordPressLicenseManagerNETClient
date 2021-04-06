@@ -16,6 +16,12 @@ namespace WordPressLicenseManagerNETClient.Models
         {
             RegisteredDomain = RegisterDomain();
         }
+
+        /// <summary>
+        /// Id
+        /// </summary>
+        public string Id { get; set; }
+
         /// <summary>
         /// First name
         /// </summary>
