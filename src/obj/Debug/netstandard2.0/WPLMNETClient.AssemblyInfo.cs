@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute(".NET standard client for the WordPress License Manager plugin.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.1")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.12")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.13")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPLMNETClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPLMNETClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.1")]
