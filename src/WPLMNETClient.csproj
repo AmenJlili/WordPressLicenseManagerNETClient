@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>P:\Blue Byte LLC\src\WPLicenseManagerClient\src\WPLMNETClient.xml</DocumentationFile>
+    <DocumentationFile>WPLMNETClient.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
