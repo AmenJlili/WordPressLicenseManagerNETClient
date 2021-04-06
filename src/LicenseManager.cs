@@ -177,8 +177,8 @@ namespace WordPressLicenseManagerNETClient
                         restRequest.AddParameter("product_ref", license.ProductReference);
 
                     // add subscriber id 
-                    if (string.IsNullOrWhiteSpace(license.SubscribedID) == false)
-                        restRequest.AddParameter("subscriber_id", license.RegisteredDomain);
+                    if (string.IsNullOrWhiteSpace(license.SubscriberID) == false)
+                        restRequest.AddParameter("subscr_id", license.RegisteredDomain);
 
                     // add first name
                     if (string.IsNullOrWhiteSpace(license.FirstName) == false)

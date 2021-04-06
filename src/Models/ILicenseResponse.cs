@@ -148,7 +148,6 @@ namespace WordPressLicenseManagerNETClient.Models
         [JsonProperty("txn_id")]
         public string TaxID  { get; private set;}
         [JsonProperty("subscr_id")]
-
         public string SubscriberID{ get; private set;}
 
 

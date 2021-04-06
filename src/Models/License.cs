@@ -63,7 +63,7 @@ namespace WordPressLicenseManagerNETClient.Models
         /// <summary>
         /// Subscriber ID
         /// </summary>
-        public string SubscribedID { get;  set; }
+        public string SubscriberID { get;  set; }
 
 
         /// <summary>
