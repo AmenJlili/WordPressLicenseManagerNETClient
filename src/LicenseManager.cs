@@ -263,7 +263,7 @@ namespace WordPressLicenseManagerNETClient
         {
             return Task.Run(() =>
             {
-                return PerformAction(action, License);
+                return PerformAction(action, License, httpMethod);
             });
         }
 
