@@ -62,4 +62,8 @@ This sample shows how to activate a pending license. Deactivation and creation o
                 Assert.IsTrue(licenseResponse.Success);
         }
  ```
+ 
+ # Acknowledgement
+
+Thanks to https://github.com/xavave for his contributions.
 
