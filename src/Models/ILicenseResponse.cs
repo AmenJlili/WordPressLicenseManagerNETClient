@@ -170,7 +170,7 @@ namespace WordPressLicenseManagerNETClient.Models
         [JsonProperty("last_name")]
         public string LastName { get; private set; }
 
-        [JsonProperty("company_name ")]
+        [JsonProperty("company_name")]
         public string CompanyName { get; private set; }
 
         [JsonProperty("txn_id")]

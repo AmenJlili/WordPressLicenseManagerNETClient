@@ -51,6 +51,7 @@ namespace WordPressLicenseManagerNETClient
                 throw new ArgumentNullException("license");
 
 
+
             if (action == Consts.Action.Unknown)
                 throw new ArgumentNullException("action");
 
@@ -92,7 +93,11 @@ namespace WordPressLicenseManagerNETClient
                     break;
                 case WordPressLicenseManagerNETClient.Consts.Action.Activate:
 
-                    restRequest.AddParameter("secret_key", Configuration.ActivationKey);
+
+                    if (string.IsNullOrWhiteSpace(license.RegisteredDomain))
+                        throw new Exception($"Please call {nameof(License.RegisterDomain)} before you call this method. Empty domain are not allowed when activating.");
+
+                        restRequest.AddParameter("secret_key", Configuration.ActivationKey);
 
                     // add first name
                     if (string.IsNullOrWhiteSpace(license.FirstName) == false)
@@ -120,6 +125,9 @@ namespace WordPressLicenseManagerNETClient
                 case WordPressLicenseManagerNETClient.Consts.Action.Deactivate:
 
                     restRequest.AddParameter("secret_key", Configuration.ActivationKey);
+
+                    if (string.IsNullOrWhiteSpace(license.RegisteredDomain))
+                        throw new Exception($"Please call {nameof(License.RegisterDomain)} before you call this method. Empty domain are not allowed when deactivating. Contact server admin if registered domain cannot created locally.");
 
                     // add first name
                     if (string.IsNullOrWhiteSpace(license.FirstName) == false)

@@ -18,19 +18,19 @@ namespace WPLMNETClient.NetFramework.Tests
         {
 
             configuration = new Configuration();
-            configuration.PostURL = "yourtestURL";
-            configuration.ActivationKey = "youractivationkey";
-            configuration.SecretKey = "yoursecretkey";
+            configuration.PostURL = "https://bluebyte.biz/";
+            configuration.ActivationKey = "5dac72c4d41999.62508674";
+            configuration.SecretKey = "5dac72c4d41910.86584044";
 
             licenseManager = LicenseManagerFactory.New(configuration);
 
 
             license = new License();
-            license.Email = "yourclientemail";
-            license.Key = "yourlicensekey";
-            license.FirstName = "firstname";
-            license.LastName = "lastname";
-            license.CompanyName = "company name";
+            license.Email = "amen@bluebyte.biz";
+            license.Key = "5db3244aef396";
+            license.FirstName = "Amen";
+            license.LastName = "Jlili";
+            license.CompanyName = "Blue Byte Systems, Inc.";
             license.MaximumDomainAllowed = 1;
         }
 
@@ -38,7 +38,9 @@ namespace WPLMNETClient.NetFramework.Tests
         [TestMethod]
         public void ActivateLicenseKey()
         {
-            var licenseResponse = licenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action.Activate, new License());
+
+            license.RegisterDomain("ABC");
+            var licenseResponse = licenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action.Activate, license);
             if (licenseResponse.Success == false)
                 throw new Exception(licenseResponse.Message);
             else
@@ -47,6 +49,7 @@ namespace WPLMNETClient.NetFramework.Tests
         [TestMethod]
         public void DeactivateLicenseKey()
         {
+            license.RegisterDomain();
             var licenseResponse = licenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action.Deactivate, license);
             if (licenseResponse.Success == false)
                 throw new Exception(licenseResponse.Message);
@@ -66,6 +69,9 @@ namespace WPLMNETClient.NetFramework.Tests
         [TestMethod]
         public void CreateLicenseKey()
         {
+            license.Email = "TestEmailCreated@UnitTesting.com";
+            license.Key= "AF54A412-8A53-4C04-9A9B-5C16263CCAC0";
+
             var licenseResponse = licenseManager.PerformAction(WordPressLicenseManagerNETClient.Consts.Action.Create, license);
             if (licenseResponse.Success == false)
                 throw new Exception(licenseResponse.Message);

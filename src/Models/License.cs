@@ -14,7 +14,7 @@ namespace WordPressLicenseManagerNETClient.Models
         /// </summary>
         public License()
         {
-            RegisteredDomain = RegisterDomain();
+            
         }
 
         /// <summary>
@@ -86,19 +86,26 @@ namespace WordPressLicenseManagerNETClient.Models
 
 
         /// <summary>
-        /// Registered domain
+        /// The domain for the license object.
         /// </summary>
-        public readonly string RegisteredDomain;
+        public string RegisteredDomain { get; private set; }
 
 
         /// <summary>
         /// Registers the current domain. Default implementation returns a string in the following format: "MachineNode: MACHINENAME - [{CPU_BIOS_SERIAL_NUMBER}]"
         /// </summary>
+        /// <param name="customDomainName">Name of the custom domain.</param>
         /// <remarks>
         /// You can override this method to provide alternative domain of uniquely identifying how a license is activated on a machine.
         /// </remarks>
-        public virtual string RegisterDomain()
+        public virtual void RegisterDomain(string customDomainName = "")
         {
+            if (string.IsNullOrWhiteSpace(customDomainName) == false)
+            {
+                RegisteredDomain = customDomainName;
+                return;
+             };
+
             string serialNumber = string.Empty;
 
             ManagementObjectSearcher MOS = new ManagementObjectSearcher(" Select * From Win32_BIOS ");
@@ -108,7 +115,7 @@ namespace WordPressLicenseManagerNETClient.Models
             }
             serialNumber = $"MachineNode: {Environment.MachineName} - [{serialNumber}]";
 
-            return serialNumber;
+            RegisteredDomain = serialNumber;
         }
     }
 }
