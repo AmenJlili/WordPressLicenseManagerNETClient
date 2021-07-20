@@ -15,7 +15,7 @@ Find it [here](https://www.nuget.org/packages/WPLMNETClient/).
 # Examples
 
 ## Actions 
-Four actions are available. You can create a new license, activate/deactivate a pending license or check the meta data of a license.
+Four actions are available. You can create a new license, activate/deactivate a license or check the metadata of an existing license.
 
 ## Configuration class
 
@@ -47,6 +47,11 @@ This sample shows how to activate a pending license. Deactivation and creation o
             license.LastName = "Norris";
             license.CompanyName = "Chuck Norris Unlimited Liability Co";
             license.MaximumDomainAllowed = 1;
+            // you must call RegisterDomain before you perform an action
+            license.RegisterDomain();
+
+
+
         
             ActivateLicenseKey();
         }
