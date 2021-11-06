@@ -1,26 +1,26 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <package>
   <metadata>
     <!--*-->
     <id>WPLMNETClient.Framework</id>
     <!--*-->
-    <version>$version$</version>
+    <version>1.0.5</version>
     <title>WPLMNETClient.Framework</title>
     <!--*-->
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-
+    <authors>Amen Jlili</authors>
+    <owners>Amen Jlili</owners>
     <licenseUrl>https://github.com/AmenJlili/WordPressLicenseManagerNETClient/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/AmenJlili/WordPressLicenseManagerNETClient</projectUrl>
-    <repository type="git" url="https://github.com/AmenJlili/WordPressLicenseManagerNETClient"/>
+    <repository type="git" url="https://github.com/AmenJlili/WordPressLicenseManagerNETClient" />
     <iconUrl>https://api.nuget.org/v3-flatcontainer/wplmnetclient/1.0.4/icon</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--*-->
-    <description>$description$</description>
+    <description>.NET Framework client for the WordPress License Manager plugin.</description>
     <!--*-->
     <releaseNotes>.NET Framework client for the WordPress License Manager plugin.</releaseNotes>
-    <copyright>$copyright$</copyright>
-    <tags> </tags>
+    <copyright>Copyright ©  2021</copyright>
+    <tags>
+    </tags>
     <dependencies>
       <!--
       <dependency id="SampleDependency" version="1.0" />
