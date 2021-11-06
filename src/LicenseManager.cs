@@ -26,7 +26,7 @@ namespace WordPressLicenseManagerNETClient
         public static ILicenseManager New(Configuration Configuration)
         {
             if (Configuration == null)
-                throw new ArgumentNullException("Configuration");
+                throw new ArgumentNullException(nameof(Configuration));
 
             return new LicenseManager(Configuration);
         }
@@ -104,9 +104,6 @@ namespace WordPressLicenseManagerNETClient
                         restRequest.AddParameter("first_name", license.FirstName);
                     // add domain 
                     restRequest.AddParameter("registered_domain", license.RegisteredDomain);
-                    // add first name
-                    if (string.IsNullOrWhiteSpace(license.FirstName) == false)
-                        restRequest.AddParameter("first_name", license.FirstName);
                     // add last name 
                     if (string.IsNullOrWhiteSpace(license.LastName) == false)
                         restRequest.AddParameter("last_name", license.LastName);
@@ -134,9 +131,6 @@ namespace WordPressLicenseManagerNETClient
                         restRequest.AddParameter("first_name", license.FirstName);
                     // add domain 
                     restRequest.AddParameter("registered_domain", license.RegisteredDomain);
-                    // add first name
-                    if (string.IsNullOrWhiteSpace(license.FirstName) == false)
-                        restRequest.AddParameter("first_name", license.FirstName);
                     // add last name 
                     if (string.IsNullOrWhiteSpace(license.LastName) == false)
                         restRequest.AddParameter("last_name", license.LastName);

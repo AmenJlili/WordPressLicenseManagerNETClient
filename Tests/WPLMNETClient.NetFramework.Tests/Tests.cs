@@ -19,8 +19,8 @@ namespace WPLMNETClient.NetFramework.Tests
 
             configuration = new Configuration();
             configuration.PostURL = "https://bluebyte.biz/";
-            configuration.ActivationKey = "5dac72c4d41999.62508674";
-            configuration.SecretKey = "5dac72c4d41910.86584044";
+            configuration.ActivationKey = "Regenerate_these";
+            configuration.SecretKey = "Regenerate_these";
 
             licenseManager = LicenseManagerFactory.New(configuration);
 
