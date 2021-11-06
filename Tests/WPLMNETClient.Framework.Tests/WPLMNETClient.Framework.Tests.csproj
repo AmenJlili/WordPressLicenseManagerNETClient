@@ -63,7 +63,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\WPLMNETClient.Framework\WPLMNETClient.Framework.csproj">
+    <ProjectReference Include="..\..\src\WPLMNETClient.Framework\WPLMNETClient.Framework.csproj">
       <Project>{c9fe53f7-6854-45eb-b7c4-5cc52d62f7eb}</Project>
       <Name>WPLMNETClient.Framework</Name>
     </ProjectReference>
