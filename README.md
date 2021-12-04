@@ -6,6 +6,9 @@ A .NET client for  software License Manager (https://wordpress.org/plugins/softw
 
 A better fork of the software license manager wordpress plugin with woocommerce integration can be found [here](https://github.com/Arsenal21/software-license-manager) (https://github.com/Arsenal21/software-license-manager)
 
+# Are your binaires signed?
+ Starting version 1.0.6, WPLMNETClient.Framework.dll and WPLMNETClient.Standard.dll and their dependencies are signed.
+
 # NuGet
 
 .NET Standard 2.0 ![NuGet](https://img.shields.io/nuget/v/WPLMNETClient.svg) 
