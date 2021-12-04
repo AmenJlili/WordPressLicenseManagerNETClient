@@ -1,15 +1,20 @@
-![NuGet](https://img.shields.io/nuget/v/WPLMNETClient.svg) 
 
 
 
 # WordPressLicenseManagerNETClient
-A .NET standard client for  Software License Manager (https://wordpress.org/plugins/software-license-manager/). A better fork of the software license manager wordpress plugin with woocommerce integration can be found [here](https://github.com/Arsenal21/software-license-manager) (https://github.com/Arsenal21/software-license-manager) Disclaimer: Have not tested it.
+A .NET client for  software License Manager (https://wordpress.org/plugins/software-license-manager/). 
+
+A better fork of the software license manager wordpress plugin with woocommerce integration can be found [here](https://github.com/Arsenal21/software-license-manager) (https://github.com/Arsenal21/software-license-manager)
 
 # NuGet
 
-Find it [here](https://www.nuget.org/packages/WPLMNETClient/).
+.NET Standard 2.0 ![NuGet](https://img.shields.io/nuget/v/WPLMNETClient.svg) 
 
 ``` Install-Package WPLMNETClient ```
+
+.NET Framework 4.7.2 ![NuGet](https://img.shields.io/nuget/v/WPLMNETClient.Framework.svg) 
+
+``` Install-Package WPLMNETClient.Framework ```
 
  
 # Examples
